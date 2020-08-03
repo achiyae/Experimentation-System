@@ -1,0 +1,38 @@
+<div>
+  <div class="col-lg-6">
+    <button
+      class="btn btn-primary"
+      [disabled]="!isEditable"
+      (click)="onSetStart()">Set Start
+    </button>
+    <p
+      *ngIf="from !== null; else fromElseBlock">Row: {{from.row}}, Col: {{from.column}}</p>
+    <a
+      *ngIf="isEditable"
+      style="background: #e3dbdb; margin: 0; border: 0"
+      (click)="onResetStart()">Reset</a>
+    <ng-template #fromElseBlock><p>Select start point</p></ng-template>
+  </div>
+  <div class="col-lg-6">
+    <div class="col-lg-4">
+      <button
+        class="btn btn-primary"
+        [disabled]="!isEditable"
+        (click)="onSetEnd()">Set End
+      </button>
+      <p
+        *ngIf="to !== null; else toElseBlock">Row: {{to.row}}, Col: {{to.column}}</p>
+      <a
+        *ngIf="isEditable"
+        (click)="onResetEnd()">Reset</a>
+      <ng-template #toElseBlock><p>Select end point</p></ng-template>
+    </div>
+    <div class="col-md-2">
+      <button
+        class="btn btn-primary"
+        *ngIf="isEditable && tagNum !== 1"
+        (click)="onRemoveTag()">Remove Tag
+      </button>
+    </div>
+  </div>
+</div>

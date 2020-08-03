@@ -1,0 +1,10 @@
+<div>
+  <p>{{question.question}}</p>
+  <label>
+    <input
+      [id]="'answer' + questionIndex"
+      [(ngModel)]="answer"
+      type="text"
+      [readOnly]="!isEditable()">
+  </label>
+</div>

@@ -1,0 +1,17 @@
+<div class="main_div">
+  <p class="title">{{stageNum}}{{numOrdinal}} stage - type: {{stageType}}</p>
+  <app-info-stage
+    *ngIf="isInfoStage()"
+    [stage]="stage"></app-info-stage>
+  <app-questionnaire-page
+    *ngIf="isQuestionnaireStage()"
+    [stage]="stage"></app-questionnaire-page>
+  <app-code-stage
+    *ngIf="isCodeStage()"
+    [stage]="stage"></app-code-stage>
+  <app-tagging-stage
+    *ngIf="isTagging()"
+    [stage]="stage"></app-tagging-stage>
+  <app-complete
+    *ngIf="isComplete()"></app-complete>
+</div>

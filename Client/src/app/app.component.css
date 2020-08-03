@@ -1,0 +1,14 @@
+.gili-width {
+  top: 0;
+  margin-top: 0;
+  width: 100%;
+  background: #29516f;
+}
+
+.title {
+  text-align: center;
+  padding: 10px !important;
+  color: white;
+  font-family: Helvetica, serif;
+}
+

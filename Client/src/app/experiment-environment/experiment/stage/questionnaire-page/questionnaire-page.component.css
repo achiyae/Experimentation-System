@@ -1,0 +1,6 @@
+.quesionnaire-class {
+  margin: 0px auto !important;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px !important;
+  min-height: 300px;
+}

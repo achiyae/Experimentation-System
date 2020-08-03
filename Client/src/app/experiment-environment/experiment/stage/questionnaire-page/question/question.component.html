@@ -1,0 +1,8 @@
+<app-open-question
+  *ngIf="isOpen()"
+  [stage]="stage"
+  [questionIndex]="questionIndex"></app-open-question>
+<app-multi-choice-question
+  *ngIf="isMultiChoice()"
+  [stage]="stage"
+  [questionIndex]="questionIndex"></app-multi-choice-question>

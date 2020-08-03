@@ -1,0 +1,17 @@
+<div class="div2">
+  <p>This is {{accessCode}}'s experiment</p>
+</div>
+<br>
+<div class="div1">
+  <app-stage
+    [stageNum]="stageNum"></app-stage>
+</div>
+<br>
+<div>
+  <app-footer
+    (nextStage)="onNext()"
+    (previousStage)="onPrevious()"
+    (submitStage)="onSubmit()"
+    [accessCode]="accessCode"
+    [stageNum]="stageNum"></app-footer>
+</div>

@@ -1,0 +1,11 @@
+<div class="quesionnaire-class">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-question
+        *ngFor="let question of stage.questions; let i = index"
+        [stage]="stage"
+        [questionIndex]="i"></app-question>
+      <br>
+    </div>
+  </div>
+</div>

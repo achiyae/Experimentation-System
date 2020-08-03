@@ -1,0 +1,5 @@
+.code_class {
+  border: 1px black;
+  display: flex;
+  flex-direction: column;
+}

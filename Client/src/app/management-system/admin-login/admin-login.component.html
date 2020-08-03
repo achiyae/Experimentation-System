@@ -1,0 +1,33 @@
+<div class="div1login">
+  <form (ngSubmit)="onSubmit()" [formGroup]="accessForm">
+    <div class="form-group">
+      <label for="bguUsername">Enter your BGU username</label>
+      <input
+        class="form-control"
+        formControlName="bguUsername"
+        id="bguUsername"
+        type="text">
+    </div>
+    <div class="form-group">
+      <label for="password">Enter your password</label>
+      <input
+        class="form-control"
+        formControlName="password"
+        id="password"
+        type="password">
+    </div>
+    <p *ngIf="accessForm.touched && accessForm.invalid">Invalid credentials</p>
+    <br>
+    <button
+      style="cursor: pointer;padding: 5px 5px !important;"
+      [disabled]="accessForm.invalid"
+      class="btn btn-primary"
+      type="submit">Login
+    </button>
+  </form>
+  <p *ngIf="failedLogin">Bad credentials</p>
+  <div *ngIf="error" class="alert alert-danger">
+    <h1>An Error Occurred</h1>
+    <p>{{error}}</p>
+  </div>
+</div>

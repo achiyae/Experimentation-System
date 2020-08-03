@@ -1,0 +1,16 @@
+<div>
+  <p>{{question.question}}</p>
+  <div class="input-group">
+    <label>
+      <select
+        [id]="'answer' + questionIndex"
+        [(ngModel)]="answer"
+        [disabled]="!isEditable()"
+        class="custom-select">
+        <option *ngFor="let answer of question.possibleAnswers">
+          {{answer}}
+        </option>
+      </select>
+    </label>
+  </div>
+</div>

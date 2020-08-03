@@ -1,0 +1,26 @@
+<div class="footer_class">
+  <button (click)="onPrevious()"
+          [disabled]="isFirstStage()"
+          class="btn btn-primary"
+          style="padding: 5px 10px !important;"
+          type="submit">Previous Stage
+  </button>
+  <div>
+    You: {{accessCode}} are currently in stage number {{stageNum}}
+  </div>
+  <div>
+    <button (click)="onNext()"
+            *ngIf="!isCurrentStage()"
+            [disabled]="isFinalStage()"
+            class="btn btn-primary"
+            style=" padding: 5px 10px !important;"
+            type="submit">Next Stage
+    </button>
+    <button (click)="onSubmit()"
+            *ngIf="isCurrentStage()"
+            class="btn btn-primary"
+            style="padding: 5px 10px !important;"
+            type="submit">Submit
+    </button>
+  </div>
+</div>

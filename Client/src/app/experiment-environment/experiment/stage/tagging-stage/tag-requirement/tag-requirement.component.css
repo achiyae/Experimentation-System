@@ -1,0 +1,24 @@
+.tag_req_class {
+  border: 1px black;
+  display: flex;
+  flex-direction: column;
+}
+.row_req_class {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 20px !important;
+}
+.in_row{
+  margin-left: 2% !important;
+}
+.row_input_class {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+

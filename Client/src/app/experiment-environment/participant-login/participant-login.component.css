@@ -1,0 +1,12 @@
+.my_form {
+  width: 90%;
+  margin: 10px auto !important;
+}
+
+.form-control {
+  margin-top: 15px;
+}
+
+.btn {
+  margin-top: 30px !important;
+}

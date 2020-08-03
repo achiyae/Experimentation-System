@@ -1,0 +1,30 @@
+<div class="code_class">
+  <div #codeEditor></div>
+</div>
+<h5>Selected row: {{b.row}}, column: {{b.column}}</h5>
+<div class="row" *ngFor="let req of stage.codeStage.requirements; let i = index">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <h4>{{i + 1}}. {{req}}</h4>
+      </div>
+      <div class="col-md-4">
+        <button
+          class="btn btn-primary"
+          [disabled]="!isEditable()"
+          (click)="onAddTag(i)">Add Tag</button>
+      </div>
+    </div>
+    <div class="row">
+      <app-tag-requirement *ngFor="let tag of tags[i]; let j = index"
+                           [requirementNum]="i + 1"
+                           [tagNum]="j + 1"
+                           [tagBorder]="b"
+                           [tag]="tag"
+                           [isEditable]="isEditable()"
+                           (tagDone)="onTag($event, i, j)"
+                           (tagRemoved)="OnRemoveTag(i, j)"></app-tag-requirement>
+    </div>
+  </div>
+</div>
+

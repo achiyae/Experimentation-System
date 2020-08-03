@@ -1,0 +1,53 @@
+<div class="container">
+  <h1>{{experiment.name}}</h1>
+  <mat-accordion style="background: black">
+    <mat-expansion-panel style="background: #aeaeae" *ngFor="let stage of experiment.stages; index as i">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{i + 1}}.
+        </mat-panel-title>
+        <mat-panel-description>
+          {{stage.getType()}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p style="white-space: pre-wrap">{{getStageDescription(stage)}}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <h4>Experimentees:</h4>
+  <div class="row" *ngFor="let expee of experimentees">
+    <div class="col-md-6">
+      <p>{{expee.email}}: {{expee.accessCode}}</p>
+    </div>
+    <div class="col-md-2">
+      <button
+        class="btn btn-success"
+        *ngIf="expee.isComplete"
+        [routerLink]="['/exp', expee.accessCode, 'stage', '1']">View Results
+      </button>
+    </div>
+    <div class="col-md-2">
+      <p>{{expee.isComplete ? 'Completed' : 'Did not complete'}}</p>
+    </div>
+  </div>
+  <p></p>
+  <div class="form-group text-center">
+    <h3>Generate access codes</h3>
+    <p>Enter experimentees emails separated by commas</p>
+    <label class="row">
+      <textarea
+        style="width: 300px; height: 150px"
+        matInput
+        [(ngModel)]="emails"></textarea>
+    </label>
+    <div class="row">
+      <button
+        (click)="onGenerateCodes()"
+        class="btn btn-success text-center">Generate access codes
+      </button>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary "
+    [routerLink]="['/admin','admin-home']">Return to home
+  </button>
+</div>

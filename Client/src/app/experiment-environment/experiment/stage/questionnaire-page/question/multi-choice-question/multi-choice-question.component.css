@@ -1,0 +1,6 @@
+.american_question {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px !important;
+}

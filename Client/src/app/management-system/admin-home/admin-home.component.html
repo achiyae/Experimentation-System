@@ -1,0 +1,53 @@
+<div class="div1">
+  <div class="col-xs-4 center-block">
+    <button [routerLink]="['/admin/add']" class="btn btn-success" style="padding: 10px 10px !important;">New Experiment
+    </button>
+  </div>
+  <hr>
+  <div class="div1">
+    <div class="col-xs-12">
+      <h3 *ngIf="experiments.length === 0">No Experiments</h3>
+      <a *ngFor="let experiment of experiments"
+         class="list-group-item clearfix"
+         [routerLink]="['/admin', 'view-experiment', experiment.name]"
+         routerLinkActive="active"
+         style="cursor: pointer;padding: 10px 10px !important;">
+        <div class="pull-left" style="padding: 10px 10px !important;">
+          <h4 class="list-group-item-heading">{{experiment.name}}</h4>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="form-group">
+    <h4>Appoint admin</h4>
+    <form #f="ngForm">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          id="email"
+          name="email"
+          required
+          type="email"
+          class="form-control"
+          ngModel>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          id="password"
+          name="password"
+          required
+          type="password"
+          class="form-control"
+          ngModel>
+      </div>
+      <button
+        class="btn btn-primary"
+        [disabled]="!f.valid"
+        (click)="onAddAdmin(f)">Add Admin
+      </button>
+    </form>
+  </div>
+</div>
+
+

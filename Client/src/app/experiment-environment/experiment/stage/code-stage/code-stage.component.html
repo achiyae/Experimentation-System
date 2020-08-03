@@ -1,0 +1,40 @@
+<mat-drawer-container class="example-container" [hasBackdrop]="false">
+  <mat-drawer #drawer style="background: #e2e2e2" mode="over">
+    <p>{{stage.description}}</p>
+    <p>Requirements:</p>
+    <ul>
+      <li *ngFor="let req of stage.requirements"><p>{{req}}</p></li>
+    </ul>
+  </mat-drawer>
+  <mat-drawer-content>
+    <h5>Programming language: {{stage.language}}</h5>
+    <div class="code_class">
+      <div #codeEditor></div>
+      <br>
+      <p>Current position: row: {{row}}, column: {{col}}</p>
+    </div>
+    <button
+      class="btn btn-primary"
+      [disabled]="!isEditable()"
+      (click)="onReset()">Reset To Template
+    </button>
+    <div class="divider"></div>
+    <button
+      class="btn btn-primary pull-right"
+      (click)="drawer.toggle()">Toggle Description
+    </button>
+    <button
+      class="btn btn-primary"
+      (click)="onRun()">Run
+    </button>
+    <div class="divider"></div>
+    <button
+      class="btn btn-danger"
+      (click)="onClearStdout()">
+      Clear stdout
+    </button>
+    <p>stdout:</p>
+    <p style="white-space: pre-wrap">{{stdout}}</p>
+  </mat-drawer-content>
+</mat-drawer-container>
+

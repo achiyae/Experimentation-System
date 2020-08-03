@@ -1,0 +1,25 @@
+.div1 {
+  width: 70%;
+  margin: 10px auto !important;
+}
+
+.div2 {
+  background: rgba(44, 139, 125, 0.71);
+  text-align: center;
+  height: 1.5pc;
+  vertical-align: middle;
+  box-shadow: 2px 5px 30px;
+  border-bottom-left-radius: 5pc;
+  border-bottom-right-radius: 5pc;
+  /*border-top: white;*/
+  /*border-top-width: 10pc;*/
+}
+
+.div3 {
+  border: 1px solid green;
+}
+
+.p {
+  margin-left: 15% !important;
+  padding: 10px !important;
+}

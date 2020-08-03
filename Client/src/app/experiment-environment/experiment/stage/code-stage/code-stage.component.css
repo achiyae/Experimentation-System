@@ -1,0 +1,18 @@
+.code_class {
+  border: 1px black;
+  display: flex;
+  flex-direction: column;
+}
+
+.divider{
+  width:5px;
+  height:auto;
+  display:inline-block;
+}
+
+/*mat-drawer-content {*/
+/*  padding: 12px;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: flex-start;*/
+/*}*/
